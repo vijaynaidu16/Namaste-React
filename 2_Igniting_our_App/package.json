@@ -1,0 +1,23 @@
+{
+  "name": "2_igniting_our_app",
+  "version": "1.0.0",
+  "description": "This is Vijay Pardhu",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Vijay pardhu",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 10 -v of chrome",
+    "last 2 firefox browser"
+]
+}
