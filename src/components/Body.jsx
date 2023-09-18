@@ -1,55 +1,20 @@
+import { useState } from "react";
 import resList from "../utils/mockData";
 import RestuarantCard from "./RestaurantCard";
 
 const Body = () => {
-  let listOfRestuarants = [
-    {
-      data: {
-        id: "744531",
-        name: "KFC",
-        cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-        cuisines: ["Pizzas, Burger"],
-        avgRating: "3.8",
-        deliveryTime: 30,
-        costForTwo: 40000,
-        costForTwoString: "₹400 FOR TWO",
-      },
-    },
-    {
-      data: {
-        id: "744532",
-        name: "Domino's Pizza",
-        cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-        cuisines: ["Pizzas, Burger"],
-        avgRating: "4.5",
-        deliveryTime: 30,
-        costForTwo: 40000,
-        costForTwoString: "₹400 FOR TWO",
-      },
-    },
-    {
-      data: {
-        id: "744533",
-        name: "Mc Donalds",
-        cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-        cuisines: ["Pizzas, Burger"],
-        avgRating: "4.9",
-        deliveryTime: 30,
-        costForTwo: 40000,
-        costForTwoString: "₹400 FOR TWO",
-      },
-    },
-  ];
+  const [listOfRestuarants, setlistOfRestuarant] = useState(resList);
+
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            listOfRestuarants = listOfRestuarants.filter(
+            const filteredList = (listOfRestuarant = listOfRestuarants.filter(
               (res) => res.data.avgRating > 4
-            );
-            console.log(listOfRestuarants);
+            ));
+            setlistOfRestuarant(filteredList);
           }}
         >
           Top Rated
