@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
 import RestuarantCard from "./RestaurantCard";
 
 const Body = () => {
   const [listOfRestuarants, setlistOfRestuarant] = useState(resList);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      'https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING'
+    );
+    const json = await data.json();
+    console.log(json);
+    setlistOfRestuarant(
+      // json.data.cards[2].data.data.cards
+      json.data.cards[0].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
 
   return (
     <div className="body">
