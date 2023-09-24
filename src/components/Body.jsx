@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-// import resList from "../utils/mockData";
 import RestuarantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestuarants, setlistOfRestuarant] = useState([]);
+  const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setsearchText] = useState("");
-  console.log("Body Rendered");
 
   useEffect(() => {
     fetchData();
@@ -17,11 +16,11 @@ const Body = () => {
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(
-    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
     setlistOfRestuarant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredRestaurant(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -30,6 +29,7 @@ const Body = () => {
       <div className="filter">
         <div className="search">
           <input
+            placeholder="Search Here"
             type="text"
             className="search-btn"
             value={searchText}
@@ -40,9 +40,9 @@ const Body = () => {
           <button
             onClick={() => {
               const filteredRestaurant = listOfRestuarants.filter((res) =>
-              res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              setlistOfRestuarant(filteredRestaurant);
+              setfilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -61,7 +61,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestuarants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestuarantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
