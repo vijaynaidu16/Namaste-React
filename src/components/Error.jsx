@@ -5,7 +5,7 @@ function Error() {
     console.log(err);
   return (
     <div>
-        <h1><em>❌❌ OOPS Something went wrong ❌❌</em></h1>
+        <h1><em>❌ OOPS Something went wrong ❌</em></h1>
         <h3>{err.status}: {err.statusText}</h3>
     </div>
   )
