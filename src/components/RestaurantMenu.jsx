@@ -3,7 +3,6 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constants";
 
-
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
@@ -15,9 +14,7 @@ const RestaurantMenu = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        MENU_API+resId
-      );
+      const response = await fetch(MENU_API + resId);
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -34,7 +31,7 @@ const RestaurantMenu = () => {
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[0]?.card?.card?.info;
   const { itemCards } =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[1]?.card
+    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
 
   return (

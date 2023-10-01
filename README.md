@@ -4,8 +4,8 @@
 - [x] Episode 03 - Laying the foundation 
 - [x] Episode 04 - Talk is cheap, show me the code! 
 - [x] Episode 05 - Let's get Hooked 
-- Episode 06 - Exploring the world 
-- Episode 07 - Finding the path 
+- [x] Episode 06 - Exploring the world 
+- [x] Episode 07 - Finding the path 
 - Episode 08 - Let's get Classy 
 - Episode 09 - Optimising our App 
 - Episode 10 - Jo dikhta hai, vo bikta hai 
