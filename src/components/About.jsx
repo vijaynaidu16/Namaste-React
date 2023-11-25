@@ -6,19 +6,21 @@ import { Component } from "react";
 class About extends Component {
   constructor(props) {
     super(props);
-    // console.log("parent constuctor");
+    // console.log(this.props.name+"parent constuctor");
   }
 
   componentDidMount(){
-    // console.log("parent const did mount");
+    // console.log(this.props.name+"parent const did mount");
   }
   render() {
-    // console.log("parent render");
+    // console.log(this.props.name+"parent render");
     return (
       <div>
         <h2>About</h2>
         <h2>This is Namaste React component</h2>
         <UserClass/>
+        {/* <UserClass name={"tanuj"} location={"Andhra"}/> */}
+        {/* <User name={"tanuj"}/> */}
       </div>
     );
   }
