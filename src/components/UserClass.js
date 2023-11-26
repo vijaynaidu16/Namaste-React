@@ -9,10 +9,10 @@
 //         avatar_url:"https://dummy-photo.com",
 //       },
 //     };
-    // console.log(this.props.name + "child constuctor");
+// console.log(this.props.name + "child constuctor");
 //   }
 //   async componentDidMount() {
-    // console.log(this.props.name +"child const did mount");
+// console.log(this.props.name +"child const did mount");
 //     const data = await fetch(`https://api.github.com/users/vijaynaidu16`);
 //     const json = await data.json();
 
@@ -22,7 +22,7 @@
 // console.log(json);
 //   }
 //   render() {
-    // console.log(this.props.name +"child render");
+// console.log(this.props.name +"child render");
 
 //     const { name, location, avatar_url } = this.state.userInfo;
 //     return (
@@ -39,39 +39,52 @@
 
 import React from "react";
 
-class UserClass extends React.Component{
-
-  constructor(props){
+class UserClass extends React.Component {
+  constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       userInfo: {
         name: "name",
         location: "location",
-      }
-    }
+        twitter_username: "@twitter",
+        avatar_url: "nan",
+      },
+    };
     // console.log(this.props.name+" child constructor");
   }
 
-  async componentDidMount(){
+   async componentDidMount() {
     // console.log(this.props.name+" child componentDidMount");
-    const data = await fetch(`https://api.github.com/users/kunal-kushwaha`);
+    const data = await fetch(`https://api.github.com/users/vijaynaidu16`);
     const json = await data.json();
-    console.log(json);
+
     this.setState({
       userInfo: json,
-    })
+    });
+    // this.timer = setInterval(() => {
+    //   console.log("set interval ");
+    // }, 1000);
   }
-  render(){
-    const {name, location} = this.state.userInfo;
-    // console.log(this.props.name+" child render");
 
+  componentDidUpdate(){
+    // console.log("componentDidUpdate");
+
+  }
+  componentWillUnmount(){
+    // clearInterval(this.timer);
+    // console.log("componentWillUnmount");
+  }
+  render() {
+    const { name, location, twitter_username , avatar_url} = this.state.userInfo;
+    // console.log(this.props.name+" child render");
     return (
       <div className="user-card">
+        <img src={avatar_url}/>
         <h2>Name: {name}</h2>
         <h2>Location: {location}</h2>
-        <h2>twitter: @vijaynaidu16</h2>
+        <h2>twitter: {twitter_username}</h2>
       </div>
-    )
+    );
   }
 }
 

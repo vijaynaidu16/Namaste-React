@@ -17,9 +17,23 @@
 // export default User;
 
 import { useEffect, useState } from "react";
+
+
 const User = (props) => {
   const { name } = props;
   const [count] = useState(0);
+  useEffect(() => {
+    // setInterval(() => {
+    //   console.log("set interval ");
+    // }, 1000);
+    console.log("UseEffect");
+    return ()=>{
+      console.log("UseEffect return");
+    
+    }
+}, [])
+
+console.log("render");
 
   return (
     <div className="user-card">

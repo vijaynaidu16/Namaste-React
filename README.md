@@ -6,7 +6,7 @@
 - [x] Episode 05 - Let's get Hooked 
 - [x] Episode 06 - Exploring the world 
 - [x] Episode 07 - Finding the path 
-- Episode 08 - Let's get Classy 
+- [x]Episode 08 - Let's get Classy 
 - Episode 09 - Optimising our App 
 - Episode 10 - Jo dikhta hai, vo bikta hai 
 - Episode 11 - Data is the new Oil 
