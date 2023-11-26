@@ -1,39 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
-  console.log(resId);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const resInfo = useRestaurantMenu(resId);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(MENU_API + resId);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(MENU_API + resId);
 
-      const data = await response.json();
-      console.log(data);
-      setResInfo(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  //     if (!response.ok) {
+  //       throw new Error("Network response was not ok");
+  //     }
+
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setResInfo(data);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
   if (resInfo === null) return <Shimmer />;
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[0]?.card?.card?.info;
   const { itemCards } =
     resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
-
+console.log(itemCards);
   return (
     <div className="menu">
       <h1>{name}</h1>
@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
       <ul>
         {itemCards.map((item) => (
           <li key={item.card.info.id}>
-            {item.card.info.name}- <em>{item.card.info.price}</em>
+            {item.card.info.name}- <em>₹{item.card.info.price}</em>
           </li>
         ))}
       </ul>
