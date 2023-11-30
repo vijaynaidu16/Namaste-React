@@ -7,7 +7,7 @@
 - [x] Episode 06 - Exploring the world 
 - [x] Episode 07 - Finding the path 
 - [x] Episode 08 - Let's get Classy 
-- Episode 09 - Optimising our App 
+- [x] Episode 09 - Optimising our App 
 - Episode 10 - Jo dikhta hai, vo bikta hai 
 - Episode 11 - Data is the new Oil 
 - Episode 12 - Let's build our store 
