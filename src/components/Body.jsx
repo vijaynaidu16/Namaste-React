@@ -35,18 +35,18 @@ const Body = () => {
 
   return listOfRestuarants.length > 0 ? (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             placeholder="Search Here"
             type="text"
-            className="search-btn"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
           />
-          <button
+          <button className="px-5 py-2 bg-green-100 m-4 rounded-md"
             onClick={() => {
               const filteredRestaurant = listOfRestuarants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -57,8 +57,9 @@ const Body = () => {
             Search
           </button>
         </div>
+        <div className="m-4 p-4 flex items-center">
         <button
-          className="filter-btn"
+        className="px-4 py-2 bg-gray-100"
           onClick={() => {
             let filteredList = listOfRestuarants.filter(
               (res) => res.info.avgRating > 4.2
@@ -66,8 +67,9 @@ const Body = () => {
             setlistOfRestuarant(filteredList);
           }}
         >
-          Top Rated
+          Top Rated Restaurants
         </button>
+        </div>
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
