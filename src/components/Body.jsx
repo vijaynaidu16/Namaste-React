@@ -35,7 +35,7 @@ const Body = () => {
 
   return listOfRestuarants.length > 0 ? (
     <div className="body">
-      <div className="filter flex">
+      <div className="filter flex ">
         <div className="search m-4 p-4">
           <input
             placeholder="Search Here"
@@ -46,7 +46,7 @@ const Body = () => {
               setsearchText(e.target.value);
             }}
           />
-          <button className="px-5 py-2 bg-green-100 m-4 rounded-md"
+          <button className="px-5 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestuarants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -57,9 +57,9 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="m-4 p-4 flex items-center">
+        <div className="m-4 p-4 flex items-center ">
         <button
-        className="px-4 py-2 bg-gray-100"
+        className="px-4 py-2 bg-gray-100 rounded-lg"
           onClick={() => {
             let filteredList = listOfRestuarants.filter(
               (res) => res.info.avgRating > 4.2
@@ -71,7 +71,7 @@ const Body = () => {
         </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap ">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

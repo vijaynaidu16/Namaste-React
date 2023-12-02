@@ -8,7 +8,7 @@
 - [x] Episode 07 - Finding the path 
 - [x] Episode 08 - Let's get Classy 
 - [x] Episode 09 - Optimising our App 
-- Episode 10 - Jo dikhta hai, vo bikta hai 
+- [x] Episode 10 - Jo dikhta hai, vo bikta hai 
 - Episode 11 - Data is the new Oil 
 - Episode 12 - Let's build our store 
 - Episode 13 - Time for the test 
