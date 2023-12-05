@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
-          <li>Online Status: {onlineStatus ? "✅" : "🔴"} </li>
+          <li className="cursor-pointer">Online Status: {onlineStatus ? "✅" : "🔴"} </li>
           <li>
             <Link className="px-4" to="/">
               Home

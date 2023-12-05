@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestuarantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -8,7 +8,8 @@ const Body = () => {
   const [listOfRestuarants, setlistOfRestuarant] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setsearchText] = useState("");
-
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  console.log(listOfRestuarants);
   useEffect(() => {
     fetchData();
   }, []);
@@ -25,13 +26,10 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
-    return(
-      <h1>You are offline!! Check your internet Connection</h1>
-    )
-  };
+    return <h1>You are offline!! Check your internet Connection</h1>;
+  }
 
   return listOfRestuarants.length > 0 ? (
     <div className="body">
@@ -46,7 +44,8 @@ const Body = () => {
               setsearchText(e.target.value);
             }}
           />
-          <button className="px-5 py-2 bg-green-100 m-4 rounded-lg"
+          <button
+            className="px-5 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestuarants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -58,17 +57,17 @@ const Body = () => {
           </button>
         </div>
         <div className="m-4 p-4 flex items-center ">
-        <button
-        className="px-4 py-2 bg-gray-100 rounded-lg"
-          onClick={() => {
-            let filteredList = listOfRestuarants.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setlistOfRestuarant(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              let filteredList = listOfRestuarants.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setlistOfRestuarant(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
         </div>
       </div>
       <div className="flex flex-wrap ">
@@ -76,8 +75,11 @@ const Body = () => {
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
-          >
-            <RestuarantCard resData={restaurant} />{" "}
+          >{restaurant?.info.promoted ? (
+            <RestaurantCardPromoted resData={restaurant} />
+          ) : (
+            <RestaurantCard resData={restaurant} />
+          )}
           </Link>
         ))}
       </div>
@@ -88,3 +90,8 @@ const Body = () => {
 };
 // https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING
 export default Body;
+// {restaurant?.info.promoted ? (
+//   <RestaurantCard resData={restaurant} />
+// ) : (
+//   <RestaurantCardPromoted resData={restaurant} />
+// )}
