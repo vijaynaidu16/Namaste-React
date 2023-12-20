@@ -9,14 +9,15 @@ const Body = () => {
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setsearchText] = useState("");
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-  console.log(listOfRestuarants);
+  // console.log(listOfRestuarants);
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     setlistOfRestuarant(
@@ -38,14 +39,14 @@ const Body = () => {
           <input
             placeholder="Search Here"
             type="text"
-            className="border border-solid border-black"
+            className="border border-solid border-black p-1 rounded-lg"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
           />
           <button
-            className="px-5 py-2 bg-green-100 m-4 rounded-lg"
+            className="px-5 py-2 bg-orange-600 text-white m-4 rounded-lg hover:bg-orange-500"
             onClick={() => {
               const filteredRestaurant = listOfRestuarants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -58,7 +59,7 @@ const Body = () => {
         </div>
         <div className="m-4 p-4 flex items-center ">
           <button
-            className="px-4 py-2 bg-gray-100 rounded-lg"
+            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
             onClick={() => {
               let filteredList = listOfRestuarants.filter(
                 (res) => res.info.avgRating > 4.2
@@ -75,11 +76,13 @@ const Body = () => {
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
-          >{restaurant?.info.promoted ? (
-            <RestaurantCardPromoted resData={restaurant} />
-          ) : (
-            <RestaurantCard resData={restaurant} />
-          )}
+          >
+            {restaurant?.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

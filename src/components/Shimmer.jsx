@@ -1,21 +1,30 @@
 const Shimmer = () =>{
     return(
-        <div className="shimmer-container">
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
+        <div className="flex flex-wrap">
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
+            <div className=" h-[400px] w-[300px] rounded-lg m-4  bg-gray-300"></div>
         </div>
     );
 };
