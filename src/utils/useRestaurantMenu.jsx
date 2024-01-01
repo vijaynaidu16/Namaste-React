@@ -10,7 +10,7 @@ const [resInfo, setResInfo] = useState(null);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(MENU_API + resId);
+      const response = await fetch(MENU_API);
 
       if (!response.ok) {
         throw new Error("Network response was not ok");

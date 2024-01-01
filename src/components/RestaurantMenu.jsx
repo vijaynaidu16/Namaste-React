@@ -30,10 +30,9 @@ const RestaurantMenu = () => {
   // };
   if (resInfo === null) return <Shimmer />;
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.data?.cards[0]?.card?.card?.info;
+    resInfo?.menu;
   const { itemCards } =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card;
+    resInfo?.menu;
   // console.log(itemCards);
   // console.log(resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   const categories =
