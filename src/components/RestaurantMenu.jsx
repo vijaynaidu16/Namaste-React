@@ -30,9 +30,10 @@ const RestaurantMenu = () => {
   // };
   if (resInfo === null) return <Shimmer />;
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.menu;
+    resInfo?.data?.cards[0]?.card?.card?.info;
   const { itemCards } =
-    resInfo?.menu;
+    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+      ?.card;
   // console.log(itemCards);
   // console.log(resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   const categories =
@@ -56,7 +57,12 @@ const RestaurantMenu = () => {
           </li>
         ))}
       </ul> */}
-      {categories.map((category) => <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}/>)}
+      {categories.map((category) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
+      ))}
     </div>
   );
 };

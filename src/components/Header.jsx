@@ -39,9 +39,6 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
-          <li className="cursor-pointer">
-            Online Status: {onlineStatus ? "✅" : "🔴"}{" "}
-          </li>
           <li>
             <Link className="px-4" to="/">
               Home
@@ -77,6 +74,9 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
+          <li className="cursor-pointer px-1">
+            {onlineStatus ? "🟢" : "🔴"}{" "}
+          </li>
         </ul>
       </div>
     </div>
