@@ -28,7 +28,6 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return <h1>You are offline!! Check your internet Connection</h1>;
