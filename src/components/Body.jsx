@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import axios from "axios";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestuarants, setlistOfRestuarant] = useState([]);
@@ -21,7 +22,7 @@ const Body = () => {
         "https://api.allorigins.win/raw?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D15.8323892%26lng%3D78.0544946%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      console.log(json);
+      // console.log(json);
       // Optional Chaining
       setlistOfRestuarant(
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -40,6 +41,8 @@ const Body = () => {
   if (onlineStatus === false) {
     return <h1>You are offline!! Check your internet Connection</h1>;
   }
+
+  const {loggedInUser, setUserName} = useContext(UserContext)
 
   return listOfRestuarants || [].length > 0 ? (
     <div className="body">
@@ -78,6 +81,14 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          <label>Username:</label>
+          <input
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+            className="px-2 border border-black"
+          />
         </div>
       </div>
       <div className="flex flex-wrap ">

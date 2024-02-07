@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   let [btnNameReact, setbtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
+  // console.log(loggedInUser);
   return (
     <div className="flex justify-between shadow-md">
-      <div  className="m-10 hover:scale-105">
+      <div className="m-10 hover:scale-105">
         <svg
           class="_8pSp-"
           viewBox="0 0 559 825"
@@ -74,9 +77,8 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
-          <li className="cursor-pointer px-1">
-            {onlineStatus ? "🟢" : "🔴"}{" "}
-          </li>
+          <li className="px-3 font-bold">{loggedInUser}</li>
+          <li className="cursor-pointer px-1">{onlineStatus ? "🟢" : "🔴"} </li>
         </ul>
       </div>
     </div>
