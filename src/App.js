@@ -10,6 +10,8 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 
 // import Shimmer from "./components/Shimmer";
@@ -29,17 +31,19 @@ const AppLayout = () => {
 useEffect(() => {
   // make api call and send username and password
   const data = {
-    name: "vijay pardhu",
+    name: "Vijay",
   };
   setUserName(data.name);
 }, []);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser: userName , setUserName}}>
       <div class="app">
         <Header />
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
