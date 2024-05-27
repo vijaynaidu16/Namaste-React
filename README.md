@@ -9,13 +9,13 @@
 - [x] Episode 08 - Let's get Classy 
 - [x] Episode 09 - Optimising our App 
 - [x] Episode 10 - Jo dikhta hai, vo bikta hai 
-- Episode 11 - Data is the new Oil 
+- [x] Episode 11 - Data is the new Oil 
 - Episode 12 - Let's build our store 
 - Episode 13 - Time for the test 
 - Episode 14 - NetflixGPT - The Beginning 
 - Episode 15 - NetflixGPT - Building the Core 
 - Episode 16 - NetflixGPT - Wrapping up 
-##  Bonus
+<!-- ##  Bonus
 - (Bonus) Machine Coding Interview and Building YouTube 
 - (Bonus) Advance features in YouTube project 
 - (Bonus) Wrapping up YouTube Project 
@@ -23,4 +23,4 @@
 - (Bonus) Personal Branding 
 - (Bonus) LinkedIn - MasterClass 
 - (Bonus) (Part 1) Resume, Interviews & Salary Negotiation 
-- (Bonus) (Part 2) Resume, Interviews & Salary Negotiation 
+- (Bonus) (Part 2) Resume, Interviews & Salary Negotiation  -->

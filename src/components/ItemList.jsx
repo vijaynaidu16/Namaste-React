@@ -4,11 +4,14 @@ import { addItems } from "../utils/cartSlice";
 
 const ItemList = ({ items, dummy }) => {
   // console.log(items);
+
   const dispatch = useDispatch();
   const handleAddItems = (item) => {
     // Dispatch an item
     dispatch(addItems(item));
+    console.log(dispatch(addItems(item)));
   };
+
   return (
     <div>
       {items.map((item) => (

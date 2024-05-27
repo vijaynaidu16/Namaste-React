@@ -7,17 +7,18 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  // console.log(resInfo);
   const [showIndex, setShowIndex] = useState(null);
   const dummy = "Dummy Data"
 
   if (resInfo === null) return <Shimmer />;
-  const { name, cuisines, costForTwoMessage } =
-    resInfo?.data?.cards[0]?.card?.card?.info;
+  const {name, cuisines, costForTwoMessage} =
+    resInfo?.data?.cards[2]?.card?.card?.info;
   const { itemCards } =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
   const categories =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"

@@ -2,10 +2,8 @@ import React from 'react'
 
 function Cart() {
   return (
-    <div className="conatiner">
-      <div className="card">
-      NO PRODUCTS IN CART
-      </div>
+    <div className="flex flex-col justify-center items-center">
+      
     </div>
   )
 }

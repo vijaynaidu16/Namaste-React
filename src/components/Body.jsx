@@ -11,18 +11,16 @@ const Body = () => {
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setsearchText] = useState("");
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-  // console.log(listOfRestuarants);
+  console.log(listOfRestuarants);
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const data = await fetch(
-        "https://api.allorigins.win/raw?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D15.8323892%26lng%3D78.0544946%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
-      );
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5308668&lng=78.4478991&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
-      // console.log(json);
+      console.log(json);
       // Optional Chaining
       setlistOfRestuarant(
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -111,5 +109,7 @@ const Body = () => {
   );
 };
 
+ // "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.71700&lng=75.83370&restaurantId=322540&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER"
+        // "https://api.allorigins.win/raw?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D15.8323892%26lng%3D78.0544946%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
 // https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING
 export default Body;
