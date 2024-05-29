@@ -9,7 +9,7 @@ const ItemList = ({ items, dummy }) => {
   const handleAddItems = (item) => {
     // Dispatch an item
     dispatch(addItems(item));
-    console.log(dispatch(addItems(item)));
+    // console.log(dispatch(addItems(item)));
   };
 
   return (
