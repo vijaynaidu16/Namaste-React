@@ -12,6 +12,7 @@ import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Footer from "./components/Footer";
 
 
 // import Shimmer from "./components/Shimmer";
@@ -41,6 +42,7 @@ useEffect(() => {
       <div class="app">
         <Header />
         <Outlet />
+        {/* <Footer/> */}
       </div>
     </UserContext.Provider>
     </Provider>
