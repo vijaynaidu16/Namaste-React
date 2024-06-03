@@ -10,7 +10,7 @@
 - [x] Episode 09 - Optimising our App 
 - [x] Episode 10 - Jo dikhta hai, vo bikta hai 
 - [x] Episode 11 - Data is the new Oil 
-- Episode 12 - Let's build our store 
+- [x] Episode 12 - Let's build our store 
 - Episode 13 - Time for the test 
 - Episode 14 - NetflixGPT - The Beginning 
 - Episode 15 - NetflixGPT - Building the Core 
