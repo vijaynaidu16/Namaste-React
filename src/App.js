@@ -42,7 +42,7 @@ useEffect(() => {
       <div class="app">
         <Header />
         <Outlet />
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </UserContext.Provider>
     </Provider>
