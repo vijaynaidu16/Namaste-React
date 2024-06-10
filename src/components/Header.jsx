@@ -5,7 +5,8 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  let [btnNameReact, setbtnNameReact] = useState("Login");
+  const [btnNameReact, setbtnNameReact] = useState("Login");
+  const [menuOpen, setMenuOpen] = useState(false);
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
 
@@ -16,12 +17,7 @@ const Header = () => {
     <div className="flex justify-between items-center p-4 shadow-md bg-white sticky top-0 z-50">
       <div className="flex items-center m-4 hover:scale-105 transition-transform duration-300">
         <Link to="/">
-          <svg
-            viewBox="0 0 559 825"
-            height="49"
-            width="34"
-            fill="#fc8019"
-          >
+          <svg viewBox="0 0 559 825" height="49" width="34" fill="#fc8019">
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -44,8 +40,29 @@ const Header = () => {
           </svg>
         </Link>
       </div>
-      <div className="flex items-center">
-        <ul className="flex space-x-4 text-gray-700">
+      <div className="flex items-center md:hidden">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-gray-700 focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div className={`md:flex ${menuOpen ? "block" : "hidden"} flex-col md:flex-row items-center w-full md:w-auto`}>
+        <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 text-gray-700">
           <li>
             <Link className="px-4 hover:text-orange-600 transition-colors duration-300" to="/">
               Home
@@ -63,7 +80,7 @@ const Header = () => {
           </li>
           <li>
             <Link className="px-4 font-bold text-xl hover:text-orange-600 transition-colors duration-300" to="/cart">
-              Cart({cartItems.length}-items)
+              Cart({cartItems.length} items)
             </Link>
           </li>
           <li>

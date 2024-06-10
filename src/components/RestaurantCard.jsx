@@ -4,10 +4,11 @@ import UserContext from "../utils/UserContext";
 const RestaurantCard = (props) => {
   const {loggedInUser} = useContext(UserContext);
   const { resData } = props;
+  // console.log(resData);
   const { name, cuisines, avgRating, costForTwo, sla,cloudinaryImageId } =
     resData?.info;
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-200 hover:bg-gray-300">
+    <div data-testid="resCard" className="m-4 p-4 w-[250px] rounded-lg bg-gray-200 hover:bg-gray-300">
        {/* <label className="absolute m-1 p-2 rounded-lg bg-gray-300 text-white">Promoted</label> */}
       <img className="rounded-lg" src={CDN_URL + cloudinaryImageId} />
       <h3 className="font-bold py-2 text-lg">{name}</h3>

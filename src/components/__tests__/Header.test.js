@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Header from "../Header";
 import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
@@ -43,4 +43,23 @@ test("should render Header component with cart components 0", () => {
   
     const CartItems = screen.getByText(/Cart/);
     expect(CartItems).toBeInTheDocument();
+  });
+
+  test("should change login button to logout onClick", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+    );
+    // Assertion
+    //   const loginButton = screen.getByRole("button");
+    const loginButton = screen.getByRole("button", {name: "Login"});
+
+    fireEvent.click(loginButton)
+
+    const logoutButton = screen.getByRole("button", {name: "Logout"});
+
+    expect(logoutButton).toBeInTheDocument();
   });

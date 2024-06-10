@@ -1,23 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717602283630" clover="3.2.0">
-  <project timestamp="1717602283630" name="All files">
-    <metrics statements="27" coveredstatements="21" conditionals="4" coveredconditionals="1" methods="12" coveredmethods="6" elements="43" coveredelements="28" complexity="0" loc="27" ncloc="27" packages="2" files="7" classes="7"/>
+<coverage generated="1718032653169" clover="3.2.0">
+  <project timestamp="1718032653170" name="All files">
+    <metrics statements="70" coveredstatements="52" conditionals="12" coveredconditionals="5" methods="27" coveredmethods="13" elements="109" coveredelements="70" complexity="0" loc="70" ncloc="70" packages="2" files="11" classes="11"/>
     <package name="components">
-      <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="5" coveredmethods="4"/>
+      <metrics statements="51" coveredstatements="38" conditionals="12" coveredconditionals="5" methods="20" coveredmethods="11"/>
+      <file name="Body.jsx" path="D:\Tanuj\Namaste-React\src\components\Body.jsx">
+        <metrics statements="28" coveredstatements="17" conditionals="6" coveredconditionals="2" methods="10" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="45" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+      </file>
       <file name="Contact.jsx" path="D:\Tanuj\Namaste-React\src\components\Contact.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="63" count="1" type="stmt"/>
         <line num="64" count="4" type="stmt"/>
       </file>
       <file name="Header.jsx" path="D:\Tanuj\Namaste-React\src\components\Header.jsx">
-        <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="8" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="3"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="95" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="RestaurantCard.jsx" path="D:\Tanuj\Namaste-React\src\components\RestaurantCard.jsx">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="Shimmer.jsx" path="D:\Tanuj\Namaste-React\src\components\Shimmer.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
       <file name="sum.js" path="D:\Tanuj\Namaste-React\src\components\sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -26,10 +75,10 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="16" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <metrics statements="19" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
       <file name="UserContext.jsx" path="D:\Tanuj\Namaste-React\src\utils\UserContext.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
       </file>
       <file name="appStore.js" path="D:\Tanuj\Namaste-React\src\utils\appStore.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -44,16 +93,22 @@
         <line num="18" count="0" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
+      <file name="constants.jsx" path="D:\Tanuj\Namaste-React\src\utils\constants.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
       <file name="useOnlineStatus.jsx" path="D:\Tanuj\Namaste-React\src\utils\useOnlineStatus.jsx">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
       </file>
     </package>
   </project>
